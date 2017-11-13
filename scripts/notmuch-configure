@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+NOTMUCH_VERSION=0.25.2
+NOTMUCH_PATH=$NM_SRC/notmuch-$NOTMUCH_VERSION
+cd $NOTMUCH_PATH
+
+export CFLAGS="-D__ANDROID__ -D_LARGEFILE_SOURCE=1 -D_LARGE_FILES -D_FILE_OFFSET_BITS=64 $CFLAGS"
+
+$NOTMUCH_PATH/configure --prefix=$NM_ROOT/out --without-bash-completion --without-docs  --without-api-docs  --without-emacs  --without-desktop  --without-ruby  --without-zsh-completion
+
