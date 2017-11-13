@@ -5,8 +5,6 @@ TALLOC_VERSION=2.1.9
 TALLOC_PATH=$NM_ROOT/src/talloc-$TALLOC_VERSION
 cd $TALLOC_PATH
 
-export CFLAGS="-D__ANDROID__ -D_LARGEFILE_SOURCE=1 -D_LARGE_FILES -D_FILE_OFFSET_BITS=64 $CFLAGS"
-
 $TALLOC_PATH/configure --cross-compile --cross-answers=$NM_SCRIPT/talloc.answers --disable-rpath --disable-python --prefix=$NM_ROOT/out
 echo "Configure succeeded! Building"
 
