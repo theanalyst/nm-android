@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+XAPIAN_VERSION=1.4.5
+XAPIAN_PATH=$NM_SRC/xapian-core-$XAPIAN_VERSION
+cd $XAPIAN_PATH
+
+export CFLAGS="-D__ANDROID__ -D_LARGEFILE_SOURCE=1 -D_LARGE_FILES -D_FILE_OFFSET_BITS=64 -isystem $NM_BUILD/include/c++/4.9.x  $CFLAGS"
+export CXXFLAGS="-D__ANDROID__ -D_LARGEFILE_SOURCE=1 -D_LARGE_FILES -D_FILE_OFFSET_BITS=64 -isystem $NM_BUILD/include/c++/4.9.x  $CFLAGS"
+
+
+$XAPIAN_PATH/configure --prefix=$NM_ROOT/out --host=aarch64-linux-android --disable-shared --with-pic 
