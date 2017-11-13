@@ -17,10 +17,11 @@ target_host=aarch64-linux-android
 export AR=$target_host-ar
 export AS=$target_host-as
 export CC=$target_host-gcc
-export CXX=$target_host-c++
+export CXX=$target_host-g++
 export LD=$target_host-ld
 export STRIP=$target_host-strip
 
 # Tell configure what flags Android requires.
 export CFLAGS="-fPIE -fPIC"
+export CXXFLAGS="-fPIE -fPIC"
 export LDFLAGS="-pie"
