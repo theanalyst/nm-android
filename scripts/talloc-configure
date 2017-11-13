@@ -1,0 +1,2 @@
+
+CFLAGS="-D__ANDROID__ -D_LARGEFILE_SOURCE=1 -D_LARGE_FILES -D_FILE_OFFSET_BITS=64" ./configure --cross-compile --cross-answers=answers --disable-rpath --disable-python
