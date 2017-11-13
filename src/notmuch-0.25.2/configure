@@ -469,13 +469,13 @@ int main(int argc, char** argv) {
    Xapian::WritableDatabase db("test.db",Xapian::DB_CREATE_OR_OPEN);
 }
 EOF
-    ${CXX} ${CXXFLAGS_for_sh} ${xapian_cxxflags} _default_backend.cc -o _default_backend ${xapian_ldflags}
-    ./_default_backend
-    if [ -f test.db/iamglass ]; then
+    # ${CXX} ${CXXFLAGS_for_sh} ${xapian_cxxflags} _default_backend.cc -o _default_backend ${xapian_ldflags}
+    # ./_default_backend
+    # if [ -f test.db/iamglass ]; then
 	default_xapian_backend=glass
-    else
-	default_xapian_backend=chert
-    fi
+    # else
+    # 	default_xapian_backend=chert
+    # fi
     printf "%s\n" "${default_xapian_backend}";
     rm -rf test.db _default_backend _default_backend.cc
 fi
