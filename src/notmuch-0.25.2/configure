@@ -370,8 +370,9 @@ int main(void) {
     return 0;
 }
 EOF
-if ${CC} ${CFLAGS} -I"$srcdir" _libversion.c -o _libversion > /dev/null 2>&1 \
-       && ./_libversion > _libversion.sh && . ./_libversion.sh
+
+
+if . ./libversion-output
 then
     printf "OK.\n"
 else
