@@ -1,0 +1,16 @@
+.first-build-message
+Makefile.config
+sh.config
+version.stamp
+TAGS
+tags
+*cscope*
+.deps
+/notmuch
+notmuch-shared
+libnotmuch.so*
+libnotmuch*.dylib
+*.[ao]
+*~
+.*.swp
+releases
