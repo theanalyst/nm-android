@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+ZLIB_VERSION=1.2.11
+ZLIB_PATH=$NM_SRC/zlib-$ZLIB_VERSION
+cd $ZLIB_PATH
+
+$ZLIB_PATH/configure --prefix=$NM_ROOT/out
+
+make install
