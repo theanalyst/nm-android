@@ -1,0 +1,9 @@
+* sources
+
+https://notmuchmail.org/releases/LATEST-notmuch-0.25.2.tar.gz
+
+https://download.samba.org/pub/talloc/talloc-2.1.9.tar.gz
+
+https://oligarchy.co.uk/xapian/1.4.5/xapian-core-1.4.5.tar.xz
+
+https://zlib.net/zlib-1.2.11.tar.gz
