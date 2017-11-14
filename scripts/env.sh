@@ -18,7 +18,7 @@ if ! echo "$PS1" | grep -q 'NMDEV'; then
 fi
 
 # Add the standalone toolchain to the search path.
-prepend_path $NM_OUT/bin
+#prepend_path $NM_OUT/bin
 prepend_path $NM_BUILD/bin
 
 # Tell configure what tools to use.
