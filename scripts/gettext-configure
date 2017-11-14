@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+GT_VERSION=0.19.8.1
+GT_PATH=$NM_SRC/gettext-$GT_VERSION
+cd $GT_PATH
+
+patch -p1 --forward < $NM_SCRIPT/gettext-patch
+
+$GT_PATH/configure --host=aarch64-linux-android --prefix=$NM_ROOT/out
+make install
+

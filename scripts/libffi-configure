@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+FFI_VERSION=3.2.1
+FFI_PATH=$NM_SRC/libffi-$FFI_VERSION
+cd $FFI_PATH
+
+sed -e '/^includesdir/ s/$(libdir).*$/$(includedir)/' -i include/Makefile.in
+sed -e '/^includedir/ s/=.*$/=@includedir@/' -e 's/^Cflags: -I${includedir}/Cflags:/' -i libffi.pc.in
+$FFI_PATH/configure --host=aarch64-linux-android --prefix=$NM_ROOT/out
+make install
+

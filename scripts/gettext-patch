@@ -1,0 +1,15 @@
+diff -ur gettext-0.19.8.1/gettext-tools/src/msginit.c gettext-0.19.8.1-patched/gettext-tools/src/msginit.c
+--- gettext-0.19.8.1/gettext-tools/src/msginit.c	2016-06-10 00:56:00.000000000 +0200
++++ gettext-0.19.8.1-patched/gettext-tools/src/msginit.c	2017-11-14 12:14:26.298093739 +0100
+@@ -1081,7 +1081,11 @@
+       char *result;
+ 
+       /* Return the pw_gecos field, up to the first comma (if any).  */
++#ifdef __ANDROID__
++      fullname = "android";
++#else
+       fullname = pwd->pw_gecos;
++#endif
+       fullname_end = strchr (fullname, ',');
+       if (fullname_end == NULL)
+         fullname_end = fullname + strlen (fullname);

@@ -1,0 +1,15 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+ICONV_VERSION=1.15
+ICONV_PATH=$NM_SRC/libiconv-$ICONV_VERSION
+cd $ICONV_PATH
+
+$ICONV_PATH/configure --prefix=$NM_ROOT/out --host=aarch64-linux-android --disable-rpath
+
+make install
+
+
+
+
+

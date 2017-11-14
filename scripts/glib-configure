@@ -1,0 +1,28 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+GLIB_VERSION=2.54.2
+GLIB_PATH=$NM_SRC/glib-$GLIB_VERSION
+cd $GLIB_PATH
+
+$GLIB_PATH/configure --prefix=$NM_ROOT/out --host=aarch64-linux-android --enable-included-printf --with-pcre=no --disable-gtk-doc-html --disable-man
+
+#  --enable-dependency-tracking
+#  --disable-dependency-tracking
+#  --enable-debug=[no/minimum/yes]
+#  --enable-gc-friendly    turn on garbage collector friendliness [default=no]
+#  --disable-mem-pools     disable all glib memory pools
+#  --disable-rebuilds      disable all source autogeneration rules
+#  --disable-largefile     omit support for large files
+#  --disable-libtool-lock  avoid locking (might break parallel builds)
+#  --disable-selinux       build without selinux support
+#  --disable-fam           don't use fam for file system monitoring
+#  --disable-xattr         build without xattr support
+#  --disable-libelf        build without libelf support
+#  --enable-libmount       build with libmount support [default for Linux]
+#  --disable-Bsymbolic     avoid linking with -Bsymbolic
+#  --disable-znodelete     avoid linking with -z,nodelete
+
+
+
+
