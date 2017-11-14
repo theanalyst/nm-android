@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+GMIME_VERSION=3.0.3
+GMIME_PATH=$NM_SRC/gmime-$GMIME_VERSION
+cd $GMIME_PATH
+
+$GMIME_PATH/configure --prefix=$NM_ROOT/out --host=aarch64-linux-android
+make -j8 install
