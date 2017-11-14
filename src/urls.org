@@ -7,3 +7,7 @@ https://download.samba.org/pub/talloc/talloc-2.1.9.tar.gz
 https://oligarchy.co.uk/xapian/1.4.5/xapian-core-1.4.5.tar.xz
 
 https://zlib.net/zlib-1.2.11.tar.gz
+https://ftp.gnome.org/pub/gnome/sources/glib/2.54/glib-2.54.2.tar.xz
+https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz
+ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz
+https://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.1.tar.xz
