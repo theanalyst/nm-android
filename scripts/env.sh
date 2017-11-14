@@ -5,12 +5,21 @@ export NM_SCRIPT=$NM_ROOT/scripts
 export NM_OUT=$NM_ROOT/out
 export NM_SRC=$NM_ROOT/src
 
+
+function prepend_path() {
+    if ! echo "$PATH" | /bin/grep -Eq "(^|:)$1($|:)" ; then
+        PATH="$1:$PATH"
+    fi
+    export PATH
+}
+
 if ! echo "$PS1" | grep -q 'NMDEV'; then
     export PS1="(NMDEV) $PS1"
 fi
 
 # Add the standalone toolchain to the search path.
-export PATH=$NM_OUT/bin:$NM_BUILD/bin:$PATH
+prepend_path $NM_OUT/bin
+prepend_path $NM_BUILD/bin
 
 # Tell configure what tools to use.
 target_host=aarch64-linux-android
