@@ -7,6 +7,17 @@ cd $GT_PATH
 
 patch -p1 --forward < $NM_SCRIPT/gettext-patch
 
-$GT_PATH/configure --host=aarch64-linux-android --prefix=$NM_ROOT/out
+export ac_cv_header_langinfo_h=no
+
+cd gettext-runtime
+./configure --host=aarch64-linux-android --prefix=$NM_ROOT/out \
+		   --disable-static \
+		   --disable-libasprintf --disable-java --disable-native-java \
+		   --without-emacs \
+		   --disable-csharp \
+		   --disable-openmp --disable-curses \
+#		   --config-cache --cache-file $NM_SCRIPT/gettext-confcache
+
+make -j8
 make install
 
