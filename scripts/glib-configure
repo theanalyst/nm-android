@@ -5,7 +5,27 @@ GLIB_VERSION=2.54.2
 GLIB_PATH=$NM_SRC/glib-$GLIB_VERSION
 cd $GLIB_PATH
 
-$GLIB_PATH/configure --prefix=$NM_ROOT/out --host=aarch64-linux-android --enable-included-printf --with-pcre=no --disable-gtk-doc-html --disable-man
+export glib_cv_long_long_format=ll
+export glib_cv_stack_grows=no
+export glib_cv_sane_realloc=yes
+export glib_cv_have_strlcpy=no
+export glib_cv_va_val_copy=yes
+export glib_cv_rtldglobal_broken=no
+export glib_cv_uscore=no
+export glib_cv_monotonic_clock=no
+export ac_cv_func_nonposix_getpwuid_r=no
+export ac_cv_func_posix_getpwuid_r=no
+export ac_cv_func_posix_getgrgid_r=no
+export glib_cv_use_pid_surrogate=yes
+export ac_cv_func_printf_unix98=no
+export ac_cv_func_vsnprintf_c99=yes
+export ac_cv_func_realloc_0_nonnull=yes
+export ac_cv_func_realloc_works=yes
+
+patch --forward -r - -p1 < $NM_SCRIPT/glib-patch || exit 1
+autoreconf -i
+$GLIB_PATH/configure --prefix=$NM_ROOT/out --host=aarch64-linux-android --enable-included-printf --with-pcre=no --disable-gtk-doc-html --disable-man --disable-dependency-tracking --disable-libmount --disable-ipv6
+make -j8 install
 
 #  --enable-dependency-tracking
 #  --disable-dependency-tracking
