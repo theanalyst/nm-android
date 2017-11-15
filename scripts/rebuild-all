@@ -2,7 +2,7 @@
 if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
 
 cd $NM_SRC
-grep // urls.org | grep -v notmuch | xargs wget
+grep // urls.org | grep -v notmuch | xargs wget -nc
 rm -rf gmime-3.0.3 gettext-0.19.8.1 libffi-3.2.1 libiconv-1.15 glib-2.54.2 xapian-core-1.4.5 talloc-2.1.9 zlib-1.2.11
 
 for i in zlib-1.2.11.tar.gz gmime-3.0.3.tar.xz gettext-0.19.8.1.tar.xz libffi-3.2.1.tar.gz libiconv-1.15.tar.gz glib-2.54.2.tar.xz xapian-core-1.4.5.tar.xz talloc-2.1.9.tar.gz
