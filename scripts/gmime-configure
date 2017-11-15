@@ -5,5 +5,8 @@ GMIME_VERSION=3.0.3
 GMIME_PATH=$NM_SRC/gmime-$GMIME_VERSION
 cd $GMIME_PATH
 
-$GMIME_PATH/configure --prefix=$NM_ROOT/out --host=aarch64-linux-android
+cp $NM_SCRIPT/iconv-detect.h .
+export ac_cv_have_iconv_detect_h=yes
+
+$GMIME_PATH/configure --prefix=$NM_ROOT/out --host=aarch64-linux-android --disable-crypto
 make -j8 install
