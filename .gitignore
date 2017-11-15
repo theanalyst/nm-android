@@ -37,3 +37,5 @@ build/
 *.pyc
 
 out/*
+
+src/*
