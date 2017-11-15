@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+SQLITE_VERSION=201710282054
+SQLITE_PATH=$NM_SRC/sqlite-snapshot-$SQLITE_VERSION
+cd $SQLITE_PATH
+
+$SQLITE_PATH/configure --prefix=$NM_ROOT/out --host=aarch64-linux-android
+
+
+

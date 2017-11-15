@@ -1,0 +1,12 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+OSSL_VERSION=1.1.0g
+OSSL_PATH=$NM_SRC/openssl-$OSSL_VERSION
+cd $OSSL_PATH
+
+$OSSL_PATH/configure --prefix=$NM_ROOT/out --host=aarch64-linux-android
+
+
+
+

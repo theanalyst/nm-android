@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+MS_VERSION=4
+MS_PATH=$NM_SRC/muchsync-$MS_VERSION
+cd $MS_PATH
+
+$MS_PATH/configure --prefix=$NM_ROOT/out
+
