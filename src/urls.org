@@ -12,3 +12,6 @@ https://ftp.gnu.org/gnu/libiconv/libiconv-1.15.tar.gz
 ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz
 https://ftp.gnu.org/pub/gnu/gettext/gettext-0.19.8.1.tar.xz
 https://download.gnome.org/sources/gmime/3.0/gmime-3.0.3.tar.xz
+http://www.muchsync.org/src/muchsync-4.tar.gz
+https://www.sqlite.org/snapshot/sqlite-snapshot-201710282054.tar.gz
+https://www.openssl.org/source/openssl-1.1.0g.tar.gz
