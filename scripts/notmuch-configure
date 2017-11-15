@@ -5,5 +5,8 @@ NOTMUCH_VERSION=0.25.2
 NOTMUCH_PATH=$NM_SRC/notmuch-$NOTMUCH_VERSION
 cd $NOTMUCH_PATH
 
+export XAPIAN_CONFIG=$NM_OUT/bin/xapian-config
+
 $NOTMUCH_PATH/configure --prefix=$NM_ROOT/out --without-bash-completion --without-docs  --without-api-docs  --without-emacs  --without-desktop  --without-ruby  --without-zsh-completion
+make install
 
