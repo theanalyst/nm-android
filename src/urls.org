@@ -15,3 +15,4 @@ https://download.gnome.org/sources/gmime/3.0/gmime-3.0.3.tar.xz
 http://www.muchsync.org/src/muchsync-4.tar.gz
 https://www.sqlite.org/snapshot/sqlite-snapshot-201710282054.tar.gz
 https://www.openssl.org/source/openssl-1.1.0g.tar.gz
+https://zlib.net/zlib-1.2.11.tar.gz

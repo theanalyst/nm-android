@@ -5,6 +5,8 @@ ZLIB_VERSION=1.2.11
 ZLIB_PATH=$NM_SRC/zlib-$ZLIB_VERSION
 cd $ZLIB_PATH
 
-$ZLIB_PATH/configure --prefix=$NM_ROOT/out
+export LDFLAGS=""
 
+$ZLIB_PATH/configure --prefix=$NM_ROOT/out 
+make
 make install
