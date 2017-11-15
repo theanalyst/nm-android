@@ -167,7 +167,7 @@ get_name_from_passwd_file (void *ctx)
         pw_buf = talloc_zero_size(ctx, pw_buf_size);
     }
 
-    if (e == 0) {
+    if (e == 0 && passwd.pw_gecos) {
 	char *comma = strchr (passwd.pw_gecos, ',');
 	if (comma)
 	    name = talloc_strndup (ctx, passwd.pw_gecos,
