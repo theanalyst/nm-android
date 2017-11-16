@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+NM_DEV_PATH=/data/local/nm
+
+adb shell rm -rf $NM_DEV_PATH
+adb push $NM_ROOT/release $NM_DEV_PATH
+
+echo
+echo "             RUN"
+echo "==================================================="
+echo
+echo "    adb shell"
+echo "    cd $NM_DEV_PATH"
+echo "    LD_LIBRARY_PATH=\$PWD/lib:\$PWD/lib64 ./notmuch"
+echo
+echo
