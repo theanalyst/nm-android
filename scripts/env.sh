@@ -31,8 +31,8 @@ export LD=$target_host-ld
 export STRIP=$target_host-strip
 
 # Tell configure what flags Android requires.
-export CFLAGS="-fPIC -I$NM_OUT/include -D__ANDROID__ -D_LARGEFILE_SOURCE=1 -D_LARGE_FILES -D_FILE_OFFSET_BITS=64"
-export CXXFLAGS="-fPIC -I$NM_OUT/include -D__ANDROID__ -D_LARGEFILE_SOURCE=1 -D_LARGE_FILES -D_FILE_OFFSET_BITS=64 -isystem $NM_BUILD/include/c++/4.9.x"
+export CFLAGS="-ggdb3 -fPIC -I$NM_OUT/include -D__ANDROID__ -D_LARGEFILE_SOURCE=1 -D_LARGE_FILES -D_FILE_OFFSET_BITS=64"
+export CXXFLAGS="-ggdb3 -fPIC -I$NM_OUT/include -D__ANDROID__ -D_LARGEFILE_SOURCE=1 -D_LARGE_FILES -D_FILE_OFFSET_BITS=64 -isystem $NM_BUILD/include/c++/4.9.x"
 export LDFLAGS="-L$NM_OUT/lib -L$NM_OUT/lib64"
 
 export PKG_CONFIG_PATH="$NM_OUT/lib/pkgconfig"

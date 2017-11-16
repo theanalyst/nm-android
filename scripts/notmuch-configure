@@ -7,7 +7,7 @@ cd $NOTMUCH_PATH
 
 export XAPIAN_CONFIG=$NM_OUT/bin/xapian-config
 
-export LDFLAGS="$LDFLAGS -lffi $(pkg-config --libs gthread-2.0 gmodule-2.0)"
+export LDFLAGS="$LDFLAGS -lffi $(pkg-config --libs gthread-2.0 gmodule-2.0) -lm -lc++_shared -pie -fPIE"
 
 echo LDFLAGS: $LDFLAGS
 
