@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+mkdir -p $NM_ROOT/release
+rsync --delete -avh $NM_OUT/lib/ $NM_ROOT/release/lib
+rsync --delete -avh $NM_OUT/lib64/ $NM_ROOT/release/lib64
+cp $NM_OUT/bin/notmuch $NM_ROOT/release/notmuch
