@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
+
+cd $NM_SRC
+rm -rf android-ndk-r15c-linux-x86_64
+wget -nc https://dl.google.com/android/repository/android-ndk-r15c-linux-x86_64.zip
+unzip android-ndk-r15c-linux-x86_64.zip
+mkdir -p $NM_ROOT/build $NM_ROOT/out
+$NM_SRC/android-ndk-r15c/build/tools/make_standalone_toolchain.py --arch arm64 --api 23 --stl=libc++ --install-dir $NM_BUILD
