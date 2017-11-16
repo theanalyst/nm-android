@@ -4,4 +4,5 @@ if [ -z ${NM_ROOT+x} ]; then echo "source env.sh plz"; exit 1; fi
 mkdir -p $NM_ROOT/release
 rsync --delete -avh $NM_OUT/lib/ $NM_ROOT/release/lib
 rsync --delete -avh $NM_OUT/lib64/ $NM_ROOT/release/lib64
+cp $NM_BUILD/aarch64-linux-android/lib/libc++_shared.so $NM_OUT/lib
 cp $NM_OUT/bin/notmuch $NM_ROOT/release/notmuch
